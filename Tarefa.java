@@ -4,7 +4,15 @@ public class Tarefa {
 
     public Tarefa(String nome) {
         this.nome = nome;
-        
         this.concluida = false;
+
+    }
+
+    public String getnome() {
+        return nome;
+    }
+
+    public boolean isConcluida() {
+        return concluida;
     }
 }
