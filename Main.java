@@ -26,9 +26,16 @@ public class Main {
                         System.out.println("Nome Vazio. tarefa não Criada");
                     } else {
                         listaTarefas.add(new Tarefa(nome));
-                        System.out.println("Terefa Craida: " + nome);
+                        System.out.println("Terefa Criada: " + nome);
                     }
                     break;
+
+                    case 2:
+                        System.out.println("--Minhas Tarefas--");
+                        for (Tarefa t : listaTarefas) { 
+                            System.out.println("- " + t.getnome());
+                        }
+                        break;
 
             }
             
