@@ -40,5 +40,6 @@ public class Main {
             }
             
         }
-    }
+        scanner.close();  //scanner.close(); Utilizado para fechar o scanner e resolver erro "is never closed"
+    } 
 }
