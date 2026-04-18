@@ -21,8 +21,5 @@ public class ConexaoBanco {
             return null;
             //try e catch avisa o erro 
         }
-    }
-
-
-    
+    }    
 }

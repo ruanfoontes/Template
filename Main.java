@@ -5,6 +5,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        //Conexão do Main com o Banco de Dados
+        System.out.println("Tentando connectar ao Banco...");
+        ConexaoBanco.conectar();
+        System.out.println("Conexão realizada");
+
         ArrayList<Tarefa> listaTarefas = new ArrayList<>();
 
         int opcao = -1;
