@@ -10,6 +10,10 @@ public class Main {
         ConexaoBanco.conectar();
         System.out.println("Conexão realizada");
 
+        //Conexão do class Main com a class Tarefa->("chamando") 
+        TarefaDAO dao = new TarefaDAO();
+        dao.criarTabela();
+
         ArrayList<Tarefa> listaTarefas = new ArrayList<>();
 
         int opcao = -1;
