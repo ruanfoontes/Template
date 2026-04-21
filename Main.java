@@ -62,4 +62,8 @@ public class Main {
         }
         scanner.close();  //scanner.close(); Utilizado para fechar o scanner e resolver erro "is never closed"
     } 
+     //método para organzar o Consoloe 
+    public static void limparConsole() {
+        for (int i = 0; i < 50; i++) System.out.println();
+    }
 }
