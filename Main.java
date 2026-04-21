@@ -41,13 +41,19 @@ public class Main {
                     break;
 
                     case 2:
-                        System.out.println("-- Minhas Tarefas no banco --");
+                        //Busca os dados do Banco
                         ArrayList<Tarefa> tarefasDoBanco = dao.listarTarefas();
+                        
+                        System.out.println("\n----- SUAS TAREFAS -----");
+                        System.out.printf("%-5s | %-20s\n", "ID", "NOME DA TAREFA");
+                        System.out.println("---------------------------");
 
-                        for (Tarefa t : tarefasDoBanco) { 
-                            System.out.println(t.getnome());
+                        for (Tarefa t : tarefasDoBanco) {
+                            System.out.printf("%-5s | %-20s\n", "", t.getnome());
                         }
+                        System.out.println("------------------------------\n");
                         break;
+    
 
                         case 3:
                             System.out.println("\n--- REMOVER TAREFA ---");
