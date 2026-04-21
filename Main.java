@@ -16,14 +16,16 @@ public class Main {
 
         int opcao = -1;
         while (opcao != 0) { 
-            System.out.println("---MENU---");
-            System.out.println("Digite uma Opção:");
-            System.out.println("Opção 1 Adicionar Tarefa");
-            System.out.println("Opção 2 Listar Tarefa");
-            System.out.println("Opção 3 Remover Tarefa");
-            System.out.println("Opção 0 Sair");
+            System.out.println("================================ ");
+            System.out.println("       SISTEMA DE TAREFAS    ");
+            System.out.println("================================");
+            System.out.println("      Digite uma Opção:");
+            System.out.println("    [1] Adicionar Nova Tarefa");
+            System.out.println("    [2] Listar Todas as Tarefas");
+            System.out.println("    [3] Remover uma Tarefa");
+            System.out.println("    [0] Sair");
+            System.out.println("=================================");
             opcao = scanner.nextInt();
-
             switch (opcao) {      //Base Para Listar Tarefas
                 case 1:
                     scanner.nextLine();
