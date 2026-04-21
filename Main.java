@@ -20,6 +20,7 @@ public class Main {
             System.out.println("Digite uma Opção:");
             System.out.println("Opção 1 Adicionar Tarefa");
             System.out.println("Opção 2 Listar Tarefa");
+            System.out.println("Opção 3 Remover Tarefa");
             System.out.println("Opção 0 Sair");
             opcao = scanner.nextInt();
 
@@ -45,7 +46,16 @@ public class Main {
                             System.out.println(t.getnome());
                         }
                         break;
-                    
+
+                        case 3:
+                            System.out.println("\n--- REMOVER TAREFA ---");
+                             //Pergunta qual o ID
+                            System.out.println("Digite o ID da tarefa que deseja excluir: ");
+                             //Ler o número que o úsuario digitou 
+                            int idParaDeletar = scanner.nextInt();
+                             // chama o método que criei no DAO
+                            dao.removerTarefa(idParaDeletar);
+                            break;
 
             }
             

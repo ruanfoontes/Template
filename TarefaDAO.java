@@ -62,4 +62,26 @@ public class TarefaDAO {
         }
         return lista;
     }
+
+    public void removerTarefa(int id) {
+          String sql = "DELETE FROM tarefas WHERE id = ?";
+
+          try (Connection conn = ConexaoBanco.conectar();
+               PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+                pstmt.setInt(1, id);
+
+                int linhas = pstmt.executeUpdate();
+
+                if (linhas > 0) {
+                  System.out.println("Sucesso: Tarefa removida!");
+                } else {
+                  System.out.println("Aviso: Nenhum item encontrado com esse ID.");
+                }
+
+               } catch (SQLException e) {
+                System.out.println("Erro ao deletar no banco: " + e.getMessage());
+               }
+               
+        }
 }
