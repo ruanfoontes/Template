@@ -14,8 +14,6 @@ public class Main {
         TarefaDAO dao = new TarefaDAO();
         dao.criarTabela();
 
-        ArrayList<Tarefa> listaTarefas = new ArrayList<>();
-
         int opcao = -1;
         while (opcao != 0) { 
             System.out.println("---MENU---");
@@ -34,17 +32,20 @@ public class Main {
                     if (nome.isEmpty()) {
                         System.out.println("Nome Vazio. tarefa não Criada");
                     } else {
-                        listaTarefas.add(new Tarefa(nome));
-                        System.out.println("Terefa Criada: " + nome);
+                        Tarefa novaTarefa = new Tarefa(nome);
+                        dao.salvarTarefa(novaTarefa.getnome());
                     }
                     break;
 
                     case 2:
-                        System.out.println("--Minhas Tarefas--");
-                        for (Tarefa t : listaTarefas) { 
-                            System.out.println("- " + t.getnome());
+                        System.out.println("-- Minhas Tarefas no banco --");
+                        ArrayList<Tarefa> tarefasDoBanco = dao.listarTarefas();
+
+                        for (Tarefa t : tarefasDoBanco) { 
+                            System.out.println(t.getnome());
                         }
                         break;
+                    
 
             }
             
