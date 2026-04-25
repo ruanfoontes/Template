@@ -2,5 +2,6 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\ruanf\\Documents\\zipFacil\\h2\\bin\\h2-2.4.240.jar"
-    ]
+    ],
+    "claudeCodeChat.permissions.yoloMode": true
 }

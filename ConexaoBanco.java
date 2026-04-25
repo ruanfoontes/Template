@@ -2,24 +2,27 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.util.Properties; // ler o arquivo .properties
+import java.io.FileInputStream; // para abrir o arquivo
 
 public class ConexaoBanco {
-    //Endereço aonde o Arquivo do Banco vai Morar
-    private static final String URL = "jdbc:h2:./dados/meubanco";
+    public static Connection conectar() {
+        Properties props = new Properties();
+        try {
+            // Abre o arquivo
+            FileInputStream fis = new FileInputStream("config.properties");
+            // Lê o que está escrito lá
+            props.load(fis);
+            
+            // Pega os valores (db.url, etc)
+            String url = props.getProperty("db.url");
+            String user = props.getProperty("db.user");
+            String pass = props.getProperty("db.pass");
 
-      //chave-> Usuario padrão chamado "sa"
-    private static final String USUARIO = "sa";
-    private static final String SENHA = "";
-
-        //O "Ato de Abrir a Porta"
-    public static Connection conectar() { //Connection-> Por onde a informação passa
-        try { //DriverManager.getConnection-> é o java pegando a chave(URL) para entrar
-            return DriverManager.getConnection(URL, USUARIO, SENHA); 
-        } catch (SQLException e) {
-            System.out.println("Erro ao ligar o banco: " + e.getMessage());
+            return DriverManager.getConnection(url, user, pass);
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
             return null;
-            //try e catch avisa o erro 
         }
-    }    
+    }
 }
