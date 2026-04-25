@@ -1,3 +1,5 @@
+package src;
+
 public class Tarefa {
     private String nome;
     private boolean concluida;

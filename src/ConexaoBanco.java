@@ -1,5 +1,5 @@
+package src;
 //Nesse Arquivo guarda-se dados do Banco de Dados desse Sistema 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties; // ler o arquivo .properties
@@ -10,10 +10,9 @@ public class ConexaoBanco {
         Properties props = new Properties();
         try {
             // Abre o arquivo
-            FileInputStream fis = new FileInputStream("config.properties");
+            FileInputStream fis = new FileInputStream("config/config.properties");
             // Lê o que está escrito lá
             props.load(fis);
-            
             // Pega os valores (db.url, etc)
             String url = props.getProperty("db.url");
             String user = props.getProperty("db.user");
